@@ -1,10 +1,17 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function (){
-
+    console.log("si");
     document.querySelectorAll(".link-barra").forEach(function(li) {
       li.addEventListener('click', f => cargar(li.dataset.url));
       // cargarPortada();
+      let img = document.querySelectorAll(".imagenprincipal");
+        if (img) {
+          img.forEach(function(imagen) {
+          imagen.addEventListener('click', event =>
+          cargar(imagen.dataset.url));
+        });
+      }
     })
   });
 
